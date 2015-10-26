@@ -14,6 +14,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'foundation-rails'
 gem 'haml'
 gem 'haml-rails'
+gem 'kaminari'
+gem 'pg_search'
 gem 'prawn'
 
 group :development, :test do

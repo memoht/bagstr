@@ -1,4 +1,6 @@
 class Reservation < ActiveRecord::Base
+  include PgSearch
+
   scope :closed, -> { where('status = ?', 'closed') }
   scope :open, -> { where('status = ?', 'open') }
 
@@ -25,6 +27,22 @@ class Reservation < ActiveRecord::Base
   after_save :release_locker, if: :closed?
 
   # Methods
+  #http://railscasts.com/episodes/343-full-text-search-in-postgresql
+  pg_search_scope :search,
+    against: [
+      [:confirmation_no, 'A'],
+      [:guest_name, 'B']
+    ],
+    using: { tsearch: { dictionary: 'simple', prefix: true } }
+
+  def self.text_search(query)
+    if query.present?
+       search(query)
+    else
+      all
+    end
+  end
+
   def closed?
     status == 'closed'
   end
