@@ -1,0 +1,19 @@
+/* color variables */
+$asbestos: rgba(127, 140, 141, 1.0);
+$beige: rgba(234, 231, 211, 0.9);
+$belize-hole: rgba(41, 128, 185,1.0);
+$bronze: rgba(196, 98, 16, 1.0);
+$sunflower: rgba(241, 196, 15, 1.0);
+$concrete: rgba(149, 165, 166, 0.8);
+$lime: rgba(154, 211, 11, 0.85);
+$mocha: rgba(46, 36, 36, 1.0);
+$pumpkin: rgba(211, 84, 0, 1.0);
+$pomegranate: rgba(192, 57, 43, 1.0);
+$clouds: rgb(236, 240, 241);
+$tungsten: rgb(51, 51, 51);
+$wet-asphalt: rgba(52, 73, 94, 1.0);
+$warning-color: ($pumpkin);
+$tertiary-color: ($clouds);
+
+@import "foundation_and_overrides";
+@import "core";

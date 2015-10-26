@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Project specific gems .........................
+gem 'foundation-rails'
 gem 'haml'
 gem 'haml-rails'
 gem 'prawn'
