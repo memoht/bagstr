@@ -25,6 +25,7 @@ class Reservation < ActiveRecord::Base
 
   before_save :assign_locker, :set_reservation_status, if: :new_record?
   after_save :release_locker, if: :closed?
+  before_destroy :release_locker
 
   # Methods
   #http://railscasts.com/episodes/343-full-text-search-in-postgresql
