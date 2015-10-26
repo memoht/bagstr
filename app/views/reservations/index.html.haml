@@ -6,7 +6,7 @@
         .small-9.columns
           = text_field_tag :query, params[:query], class: 'oversize input-text'
         .small-3.columns
-          = submit_tag "search reservations", name: nil, class: 'button radius postfix'
+          = submit_tag "search reservations", name: nil, class: 'button info postfix'
 
 .row
   .medium-4.columns
@@ -18,7 +18,7 @@
 .row
   .small-12.medium-12.columns
     - if @open_lockers.any?
-      = link_to 'New Reservation', new_reservation_path, class: 'success button'
+      = link_to 'New Reservation', new_reservation_path, class: 'info button'
     - else
       .no_vacancy_flag
         %h2= "No open lockers. We are full"
