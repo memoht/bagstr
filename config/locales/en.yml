@@ -20,4 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  flashes:
+    created: "The new record was successfully created."
+    terminated: "Hasta la vista. Record was terminated."
+    updated: "The record was successfully updated."
