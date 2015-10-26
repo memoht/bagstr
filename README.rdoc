@@ -1,0 +1,28 @@
+== README
+
+*Bagstr* is a small app designed to manage locker reservations at a hotel
+concierge desk.
+
+=== Gems
+
+* Ruby version: 2.2.3
+
+* Forego[https://github.com/ddollar/forego] and Puma[http://puma.io] for running app locally.
+
+* RSpec and FactoryGirl for testing.
+
+* Haml[http://haml.info] for views.
+
+* Postgres[http://postgresapp.com].
+
+=== Models plus notes
+
+* *Locker*
+
+* *Reservation*
+
+
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
