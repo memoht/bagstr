@@ -1,6 +1,10 @@
 .row
   .small-12.medium-12.columns
-    = link_to 'New Reservation', new_reservation_path, class: 'button'
+    - if @open_lockers.any?
+      = link_to 'New Reservation', new_reservation_path, class: 'large button'
+    - else
+      .no_vacancy_flag
+        %h2= "No open lockers. We are full"
     %hr
     %table
       %thead
