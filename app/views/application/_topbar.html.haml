@@ -1,0 +1,23 @@
+.sticky
+  %nav.top-bar{"data-topbar" => "", :role => "navigation"}
+    %ul.title-area
+      %li.name
+        %h1
+          %a{:href => "#"}
+            Bagstr
+      %li.toggle-topbar.menu-icon
+        %a{:href => "#"}
+          %span menu
+    %section.top-bar-section
+      %ul.right
+        %li.divider
+        %li.has-dropdown
+          %a{:href => "#"} Nav
+          %ul.dropdown
+            %li
+              %label Reservations
+            %li= link_to 'Reservations Index', reservations_path
+            %li.divider
+            %li
+              %label Lockers
+            %li= link_to 'Lockers Index', lockers_path
