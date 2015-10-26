@@ -1,5 +1,6 @@
 class Reservation < ActiveRecord::Base
   include PgSearch
+  include Squishable
 
   scope :closed, -> { where('status = ?', 'closed') }
   scope :open, -> { where('status = ?', 'open') }
