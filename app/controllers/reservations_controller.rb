@@ -7,6 +7,15 @@ class ReservationsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReservationPdf.new(@reservation, view_context)
+        send_data pdf.render, filename: "reservation_#{@reservation.id}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
   end
 
   def new
