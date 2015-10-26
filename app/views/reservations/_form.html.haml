@@ -7,7 +7,10 @@
       .field
         = f.label :size_code
         = f.select(:size_code, SIZE_CODES, include_blank: true)
-
+      - unless @reservation.new_record?
+        .field
+          = f.label :status
+          = f.select(:status, Reservation::RESERVE_STATUS, include_blank: true)
       %hr
         = f.submit 'Submit', class: 'small button'
         = link_to "Cancel", reservations_path, class: 'small secondary button'

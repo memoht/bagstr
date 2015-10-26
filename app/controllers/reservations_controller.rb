@@ -57,6 +57,6 @@ class ReservationsController < ApplicationController
 
   # whitelist parameters.
   def reservation_params
-    params.require(:reservation).permit(:confirmation_no, :guest_name, :size_code)
+    params.require(:reservation).permit(:confirmation_no, :guest_name, :size_code, :status)
   end
 end

@@ -2,7 +2,7 @@ class LockersController < ApplicationController
   before_action :set_locker, only: [:show, :edit, :update, :destroy]
 
   def index
-    @lockers = Locker.all
+    @lockers = Locker.all.page(params[:page])
   end
 
   def show
