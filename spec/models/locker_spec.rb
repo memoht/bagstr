@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Locker, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  # Validations
+  it 'has a valid factory' do
+    expect(create(:locker)).to be_valid
+  end
+
+  it { is_expected.to validate_presence_of :locker_no }
+  it { is_expected.to validate_presence_of :size_code}
+
 end
