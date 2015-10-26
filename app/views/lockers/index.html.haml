@@ -2,7 +2,12 @@
 .row
   .small-12.medium-12.columns
     = link_to 'New Locker', new_locker_path, class: 'success button'
-    %hr
+.row
+  .medium-4.columns
+    = paginate @lockers
+  .medium-6.columns.end
+    = page_entries_info @lockers
+  %hr
     %table
       %thead
         %tr
