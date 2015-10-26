@@ -1,0 +1,13 @@
+.row
+  .medium-6.columns.end
+    = form_for(@reservation) do |f|
+      .field
+        = f.label :guest_name
+        = f.text_field :guest_name, placeholder: 'James Kirk'
+      .field
+        = f.label :size_code
+        = f.select(:size_code, SIZE_CODES, include_blank: true)
+
+      %hr
+        = f.submit 'Submit', class: 'small button'
+        = link_to "Cancel", reservations_path, class: 'small secondary button'

@@ -6,6 +6,9 @@ class Locker < ActiveRecord::Base
   scope :available, -> { where(reserved: false) }
   scope :unavailable, -> { where(reserved: true) }
 
+  # Associations
+  has_many :reservations, dependent: :destroy
+
   # Validations
   validates :size_code,
     presence: true,

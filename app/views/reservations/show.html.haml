@@ -1,0 +1,32 @@
+.row
+  .medium-12.columns
+    %h1.subheader Reservation Confirmation
+    %p.subheader
+      The reservation for this guest has been confirmed. Please generate a
+      printable PDF ticket to give to the guest.
+    = link_to "Printable Ticket (PDF)", reservation_path(@reservation, format: "pdf"), class: 'success button', target: "_blank"
+
+    %hr
+    %h4.subheader
+      Confirmation No
+      %br
+      = @reservation.confirmation_no
+
+    %p
+      %h4 Guest Information
+      %b name:
+      = @reservation.guest_name
+
+    %p
+      %h4 Baggage Information
+      %b Bag size:
+      = @reservation.size_code
+      %br
+      %b Locker No:
+      = @reservation.locker_no if @reservation.locker
+      %br
+      %b reservation status:
+      = @reservation.status
+    %hr
+    = link_to 'Edit', edit_reservation_path(@reservation), class: 'button'
+    = link_to 'Back', reservations_path, class: 'secondary button'

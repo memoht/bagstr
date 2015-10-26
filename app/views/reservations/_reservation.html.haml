@@ -1,0 +1,11 @@
+%tr
+  %td= reservation.status
+  %td= reservation.confirmation_no
+  %td= reservation.guest_name
+  %td= reservation.size_code
+  %td
+    = link_to 'Show', reservation
+    |
+    = link_to 'Edit', edit_reservation_path(reservation)
+    |
+    = link_to 'Destroy', reservation, :method => :delete, :data => { :confirm => 'Are you sure?' }
