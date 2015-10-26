@@ -61,7 +61,7 @@ class Reservation < ActiveRecord::Base
   end
 
   def generate_confirmation_no
-    self.confirmation_no = SecureRandom.uuid
+    self.confirmation_no = SecureRandom.urlsafe_base64(10)
   end
 
   def set_reservation_status
