@@ -9,5 +9,9 @@
     = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
+  %body{class: body_class}
+    - flash.each do |key, value|
+      .alert-box{class: "#{key}", "data-alert" => ""}
+        = value
+        %a.close{:href => "#"} ×
     = yield

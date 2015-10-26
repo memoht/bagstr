@@ -1,0 +1,12 @@
+.row
+  .medium-6.columns.end
+    = form_for(@locker) do |f|
+      .field
+        = f.label :size_code
+        = f.select(:size_code, SIZE_CODES, include_blank: true)
+      .field
+        = f.label :locker_no
+        = f.text_field :locker_no, placeholder: 'size_code-number'
+      %hr
+        = f.submit 'Submit', class: 'small button'
+        = link_to "Cancel", lockers_path, class: 'small secondary button'

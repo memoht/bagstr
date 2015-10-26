@@ -32,6 +32,7 @@ end
 group :test do
   gem 'capybara'
   gem 'capybara-webkit'
+  gem 'shoulda-matchers'
   gem 'ffaker'
 end
 

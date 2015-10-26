@@ -1,0 +1,10 @@
+%tr
+  %td= locker.locker_no
+  %td= locker.size_code
+  %td= locker.reserved
+  %td
+    = link_to 'Show', locker
+    |
+    = link_to 'Edit', edit_locker_path(locker)
+    |
+    = link_to 'Destroy', locker, :method => :delete, :data => { :confirm => 'Are you sure?' }
