@@ -1,0 +1,28 @@
+.row
+  .medium-12.columns
+    %h1.subheader Reservation Confirmation
+    %p.subheader
+      The bag reservation for this guest is ready
+
+    %h3 Confirmation No
+    %h4.subheader= @reservation.confirmation_no
+
+    %hr
+
+    %h4 Guest Information
+    %b name:
+    = @reservation.guest_name
+
+    %h4 Baggage Information
+    %p
+      %b Bag size:
+      = @reservation.size_code
+      %br
+      %b Locker No:
+      = @reservation.locker_no if @reservation.locker
+      %br
+      %b reservation status:
+      = @reservation.status
+    %hr
+    = link_to 'Edit', edit_reservation_path(@reservation), class: 'button'
+    = link_to 'Back', reservations_path, class: 'secondary button'

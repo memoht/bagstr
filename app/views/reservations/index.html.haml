@@ -1,0 +1,14 @@
+.row
+  .small-12.medium-12.columns
+    = link_to 'New Reservation', new_reservation_path, class: 'button'
+    %hr
+    %table
+      %thead
+        %tr
+          %th status
+          %th confirmation_no
+          %th guest_name
+          %th size_code
+          %th actions
+      %tbody
+        = render(@reservations)
