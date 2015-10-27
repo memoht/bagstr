@@ -5,6 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'ffaker'
+
+# Populate some lockers
 1000.times do |n|
   locker_prefix = "sm-#{n+1}"
   locker = Locker.create!(
@@ -26,5 +29,15 @@ end
   locker = Locker.create!(
     size_code: 3,
     locker_no: locker_prefix
+  )
+end
+
+
+# Populate some reservations
+200.times do |n|
+  name = FFaker::Name.name
+  reservation = Reservation.create!(
+    size_code: rand(1..3),
+    guest_name: name
   )
 end
