@@ -4,7 +4,7 @@ RSpec.describe Reservation, type: :model do
 
   # Validations
   it 'has a valid factory' do
-    expect(build(:reservation)).to be_valid
+    expect(create(:reservation)).to be_valid
   end
 
   it { is_expected.to validate_presence_of :guest_name }

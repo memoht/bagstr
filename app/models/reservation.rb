@@ -1,5 +1,6 @@
 class Reservation < ActiveRecord::Base
   include PgSearch
+  include Squishable
 
   scope :closed, -> { where('status = ?', 'closed') }
   scope :open, -> { where('status = ?', 'open') }
@@ -25,6 +26,7 @@ class Reservation < ActiveRecord::Base
 
   before_save :assign_locker, :set_reservation_status, if: :new_record?
   after_save :release_locker, if: :closed?
+  before_destroy :release_locker
 
   # Methods
   #http://railscasts.com/episodes/343-full-text-search-in-postgresql
@@ -60,7 +62,7 @@ class Reservation < ActiveRecord::Base
   end
 
   def generate_confirmation_no
-    self.confirmation_no = SecureRandom.uuid
+    self.confirmation_no = SecureRandom.urlsafe_base64(10)
   end
 
   def set_reservation_status

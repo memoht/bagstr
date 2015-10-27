@@ -5,7 +5,7 @@
         = f.label :guest_name
         = f.text_field :guest_name, placeholder: 'James Kirk'
       .field
-        = f.label :size_code
+        = f.label 'Baggage size'
         = f.select(:size_code, SIZE_CODES, include_blank: true)
       - unless @reservation.new_record?
         .field

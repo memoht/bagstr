@@ -1,4 +1,6 @@
 class Locker < ActiveRecord::Base
+  include Squishable
+
   # Scopes
   scope :small, -> { where(size_code: 1) }
   scope :medium, -> { where(size_code: 2) }
