@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
   def index
-    @reservations = Reservation.text_search(params[:query]).page(params[:page])
+    @reservations = Reservation.includes(:locker).text_search(params[:query]).page(params[:page]).per(50)
     @open_lockers = Locker.available
   end
 

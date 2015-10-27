@@ -62,7 +62,7 @@ class Reservation < ActiveRecord::Base
   end
 
   def generate_confirmation_no
-    self.confirmation_no = SecureRandom.urlsafe_base64(10)
+    self.confirmation_no = SecureRandom.hex(5).upcase.insert(5, '-')
   end
 
   def set_reservation_status
