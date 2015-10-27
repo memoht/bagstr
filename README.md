@@ -1,6 +1,8 @@
 ## Readme
 
-**Bagstr** is a small app designed to manage locker reservations at a hotel concierge desk.
+![](https://github.com/memoht/bagstr/blob/master/app/assets/images/img_bagstr.png)
+**[Bagstr](https://github.com/memoht/bagstr)** is a small app designed to manage locker reservations at a hotel concierge desk.
+Written by [Guillermo Haas-Thompson](https://github.com/memoht)
 
 #### Gems
 
@@ -28,11 +30,12 @@
 + Belongs to locker.
 + Generates a confirmation number upon saving.
 + Allows concierge to create printable PDF to act as ticket.
++ Return error and do not save reservation if no locker is available.
 
 
 ### Assumptions
 
-**Reservations** come and go while a single locker can have many reservations in it's lifetime.
+'Reservations' come and go while a single locker can have many reservations in it's lifetime.
 
 + A PDF view of a reservation suffices as a ticket, therefore I did not need to use a `has_many :through` association.
 
