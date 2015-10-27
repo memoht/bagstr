@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-2.times do |n|
+1000.times do |n|
   locker_prefix = "sm-#{n+1}"
   locker = Locker.create!(
     size_code: 1,
@@ -13,7 +13,7 @@
   )
 end
 
-2.times do |n|
+1000.times do |n|
   locker_prefix = "md-#{n+1}"
   locker = Locker.create!(
     size_code: 2,
@@ -21,7 +21,7 @@ end
   )
 end
 
-2.times do |n|
+1000.times do |n|
   locker_prefix = "lg-#{n+1}"
   locker = Locker.create!(
     size_code: 3,
